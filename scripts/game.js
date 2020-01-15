@@ -1,1 +1,917 @@
-!function(){function t(e,n,a){function i(r,s){if(!n[r]){if(!e[r]){var u="function"==typeof require&&require;if(!s&&u)return u(r,!0);if(o)return o(r,!0);var l=new Error("Cannot find module '"+r+"'");throw l.code="MODULE_NOT_FOUND",l}var c=n[r]={exports:{}};e[r][0].call(c.exports,function(t){var n=e[r][1][t];return i(n||t)},c,c.exports,t,e,n,a)}return n[r].exports}for(var o="function"==typeof require&&require,r=0;r<a.length;r++)i(a[r]);return i}return t}()({1:[function(t,e,n){!function(){function t(t,e,n){return t.call.apply(t.bind,arguments)}function n(t,e,n){if(!t)throw Error();if(2<arguments.length){var a=Array.prototype.slice.call(arguments,2);return function(){var n=Array.prototype.slice.call(arguments);return Array.prototype.unshift.apply(n,a),t.apply(e,n)}}return function(){return t.apply(e,arguments)}}function a(e,i,o){return a=Function.prototype.bind&&-1!=Function.prototype.bind.toString().indexOf("native code")?t:n,a.apply(null,arguments)}function i(t,e){this.a=t,this.o=e||t,this.c=this.o.document}function o(t,e,n,a){if(e=t.c.createElement(e),n)for(var i in n)n.hasOwnProperty(i)&&("style"==i?e.style.cssText=n[i]:e.setAttribute(i,n[i]));return a&&e.appendChild(t.c.createTextNode(a)),e}function r(t,e,n){t=t.c.getElementsByTagName(e)[0],t||(t=document.documentElement),t.insertBefore(n,t.lastChild)}function s(t){t.parentNode&&t.parentNode.removeChild(t)}function u(t,e,n){e=e||[],n=n||[];for(var a=t.className.split(/\s+/),i=0;i<e.length;i+=1){for(var o=!1,r=0;r<a.length;r+=1)if(e[i]===a[r]){o=!0;break}o||a.push(e[i])}for(e=[],i=0;i<a.length;i+=1){for(o=!1,r=0;r<n.length;r+=1)if(a[i]===n[r]){o=!0;break}o||e.push(a[i])}t.className=e.join(" ").replace(/\s+/g," ").replace(/^\s+|\s+$/,"")}function l(t,e){for(var n=t.className.split(/\s+/),a=0,i=n.length;a<i;a++)if(n[a]==e)return!0;return!1}function c(t){return t.o.location.hostname||t.a.location.hostname}function f(t,e,n){function a(){l&&i&&s&&(l(u),l=null)}e=o(t,"link",{rel:"stylesheet",href:e,media:"all"});var i=!1,s=!0,u=null,l=n||null;nt?(e.onload=function(){i=!0,a()},e.onerror=function(){i=!0,u=Error("Stylesheet failed to load"),a()}):setTimeout(function(){i=!0,a()},0),r(t,"head",e)}function h(t,e,n,a){var i=t.c.getElementsByTagName("head")[0];if(i){var r=o(t,"script",{src:e}),s=!1;return r.onload=r.onreadystatechange=function(){s||this.readyState&&"loaded"!=this.readyState&&"complete"!=this.readyState||(s=!0,n&&n(null),r.onload=r.onreadystatechange=null,"HEAD"==r.parentNode.tagName&&i.removeChild(r))},i.appendChild(r),setTimeout(function(){s||(s=!0,n&&n(Error("Script load timeout")))},a||5e3),r}return null}function d(){this.a=0,this.c=null}function p(t){return t.a++,function(){t.a--,m(t)}}function g(t,e){t.c=e,m(t)}function m(t){0==t.a&&t.c&&(t.c(),t.c=null)}function v(t){this.a=t||"-"}function y(t,e){this.c=t,this.f=4,this.a="n";var n=(e||"n4").match(/^([nio])([1-9])$/i);n&&(this.a=n[1],this.f=parseInt(n[2],10))}function b(t){return _(t)+" "+(t.f+"00")+" 300px "+w(t.c)}function w(t){var e=[];t=t.split(/,\s*/);for(var n=0;n<t.length;n++){var a=t[n].replace(/['"]/g,"");-1!=a.indexOf(" ")||/^\d/.test(a)?e.push("'"+a+"'"):e.push(a)}return e.join(",")}function k(t){return t.a+t.f}function _(t){var e="normal";return"o"===t.a?e="oblique":"i"===t.a&&(e="italic"),e}function O(t){var e=4,n="n",a=null;return t&&((a=t.match(/(normal|oblique|italic)/i))&&a[1]&&(n=a[1].substr(0,1).toLowerCase()),(a=t.match(/([1-9]00|normal|bold)/i))&&a[1]&&(/bold/i.test(a[1])?e=7:/[1-9]00/.test(a[1])&&(e=parseInt(a[1].substr(0,1),10)))),n+e}function T(t,e){this.c=t,this.f=t.o.document.documentElement,this.h=e,this.a=new v("-"),this.j=!1!==e.events,this.g=!1!==e.classes}function j(t){t.g&&u(t.f,[t.a.c("wf","loading")]),S(t,"loading")}function x(t){if(t.g){var e=l(t.f,t.a.c("wf","active")),n=[],a=[t.a.c("wf","loading")];e||n.push(t.a.c("wf","inactive")),u(t.f,n,a)}S(t,"inactive")}function S(t,e,n){t.j&&t.h[e]&&(n?t.h[e](n.c,k(n)):t.h[e]())}function P(){this.c={}}function E(t,e,n){var a,i=[];for(a in e)if(e.hasOwnProperty(a)){var o=t.c[a];o&&i.push(o(e[a],n))}return i}function C(t,e){this.c=t,this.f=e,this.a=o(this.c,"span",{"aria-hidden":"true"},this.f)}function F(t){r(t.c,"body",t.a)}function I(t){return"display:block;position:absolute;top:-9999px;left:-9999px;font-size:300px;width:auto;height:auto;line-height:normal;margin:0;padding:0;font-variant:normal;white-space:nowrap;font-family:"+w(t.c)+";"+("font-style:"+_(t)+";font-weight:"+(t.f+"00")+";")}function A(t,e,n,a,i,o){this.g=t,this.j=e,this.a=a,this.c=n,this.f=i||3e3,this.h=o||void 0}function M(t,e,n,a,i,o,r){this.v=t,this.B=e,this.c=n,this.a=a,this.s=r||"BESbswy",this.f={},this.w=i||3e3,this.u=o||null,this.m=this.j=this.h=this.g=null,this.g=new C(this.c,this.s),this.h=new C(this.c,this.s),this.j=new C(this.c,this.s),this.m=new C(this.c,this.s),t=new y(this.a.c+",serif",k(this.a)),t=I(t),this.g.a.style.cssText=t,t=new y(this.a.c+",sans-serif",k(this.a)),t=I(t),this.h.a.style.cssText=t,t=new y("serif",k(this.a)),t=I(t),this.j.a.style.cssText=t,t=new y("sans-serif",k(this.a)),t=I(t),this.m.a.style.cssText=t,F(this.g),F(this.h),F(this.j),F(this.m)}function D(){if(null===it){var t=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))/.exec(window.navigator.userAgent);it=!!t&&(536>parseInt(t[1],10)||536===parseInt(t[1],10)&&11>=parseInt(t[2],10))}return it}function N(t,e,n){for(var a in at)if(at.hasOwnProperty(a)&&e===t.f[at[a]]&&n===t.f[at[a]])return!0;return!1}function L(t){var e,n=t.g.a.offsetWidth,a=t.h.a.offsetWidth;(e=n===t.f.serif&&a===t.f["sans-serif"])||(e=D()&&N(t,n,a)),e?et()-t.A>=t.w?D()&&N(t,n,a)&&(null===t.u||t.u.hasOwnProperty(t.a.c))?U(t,t.v):U(t,t.B):W(t):U(t,t.v)}function W(t){setTimeout(a(function(){L(this)},t),50)}function U(t,e){setTimeout(a(function(){s(this.g.a),s(this.h.a),s(this.j.a),s(this.m.a),e(this.a)},t),0)}function G(t,e,n){this.c=t,this.a=e,this.f=0,this.m=this.j=!1,this.s=n}function R(t){0==--t.f&&t.j&&(t.m?(t=t.a,t.g&&u(t.f,[t.a.c("wf","active")],[t.a.c("wf","loading"),t.a.c("wf","inactive")]),S(t,"active")):x(t.a))}function B(t){this.j=t,this.a=new P,this.h=0,this.f=this.g=!0}function Y(t,e,n,i,o){var r=0==--t.h;(t.f||t.g)&&setTimeout(function(){var t=o||null,s=i||null||{};if(0===n.length&&r)x(e.a);else{e.f+=n.length,r&&(e.j=r);var l,c=[];for(l=0;l<n.length;l++){var f=n[l],h=s[f.c],d=e.a,p=f;if(d.g&&u(d.f,[d.a.c("wf",p.c,k(p).toString(),"loading")]),S(d,"fontloading",p),d=null,null===ot)if(window.FontFace){var p=/Gecko.*Firefox\/(\d+)/.exec(window.navigator.userAgent),g=/OS X.*Version\/10\..*Safari/.exec(window.navigator.userAgent)&&/Apple/.exec(window.navigator.vendor);ot=p?42<parseInt(p[1],10):!g}else ot=!1;d=ot?new A(a(e.g,e),a(e.h,e),e.c,f,e.s,h):new M(a(e.g,e),a(e.h,e),e.c,f,e.s,t,h),c.push(d)}for(l=0;l<c.length;l++)c[l].start()}},0)}function q(t,e,n){var a=[],i=n.timeout;j(e);var a=E(t.a,n,t.c),o=new G(t.c,e,i);for(t.h=a.length,e=0,n=a.length;e<n;e++)a[e].load(function(e,n,a){Y(t,o,e,n,a)})}function X(t,e){this.c=t,this.a=e}function H(t,e){this.c=t,this.a=e}function $(t,e){t?this.c=t:this.c=rt,this.a=[],this.f=[],this.g=e||""}function z(t,e){for(var n=e.length,a=0;a<n;a++){var i=e[a].split(":");3==i.length&&t.f.push(i.pop());var o="";2==i.length&&""!=i[1]&&(o=":"),t.a.push(i.join(o))}}function K(t){if(0==t.a.length)throw Error("No fonts to load!");if(-1!=t.c.indexOf("kit="))return t.c;for(var e=t.a.length,n=[],a=0;a<e;a++)n.push(t.a[a].replace(/ /g,"+"));return e=t.c+"?family="+n.join("%7C"),0<t.f.length&&(e+="&subset="+t.f.join(",")),0<t.g.length&&(e+="&text="+encodeURIComponent(t.g)),e}function V(t){this.f=t,this.a=[],this.c={}}function J(t){for(var e=t.f.length,n=0;n<e;n++){var a=t.f[n].split(":"),i=a[0].replace(/\+/g," "),o=["n4"];if(2<=a.length){var r,s=a[1];if(r=[],s)for(var s=s.split(","),u=s.length,l=0;l<u;l++){var c;if(c=s[l],c.match(/^[\w-]+$/)){var f=ct.exec(c.toLowerCase());if(null==f)c="";else{if(c=f[2],c=null==c||""==c?"n":lt[c],f=f[1],null==f||""==f)f="4";else var h=ut[f],f=h?h:isNaN(f)?"4":f.substr(0,1);c=[c,f].join("")}}else c="";c&&r.push(c)}0<r.length&&(o=r),3==a.length&&(a=a[2],r=[],a=a?a.split(","):r,0<a.length&&(a=st[a[0]])&&(t.c[i]=a))}for(t.c[i]||(a=st[i])&&(t.c[i]=a),a=0;a<o.length;a+=1)t.a.push(new y(i,o[a]))}}function Q(t,e){this.c=t,this.a=e}function Z(t,e){this.c=t,this.a=e}function tt(t,e){this.c=t,this.f=e,this.a=[]}var et=Date.now||function(){return+new Date},nt=!!window.FontFace;v.prototype.c=function(t){for(var e=[],n=0;n<arguments.length;n++)e.push(arguments[n].replace(/[\W_]+/g,"").toLowerCase());return e.join(this.a)},A.prototype.start=function(){var t=this.c.o.document,e=this,n=et(),a=new Promise(function(a,i){function o(){et()-n>=e.f?i():t.fonts.load(b(e.a),e.h).then(function(t){1<=t.length?a():setTimeout(o,25)},function(){i()})}o()}),i=null,o=new Promise(function(t,n){i=setTimeout(n,e.f)});Promise.race([o,a]).then(function(){i&&(clearTimeout(i),i=null),e.g(e.a)},function(){e.j(e.a)})};var at={D:"serif",C:"sans-serif"},it=null;M.prototype.start=function(){this.f.serif=this.j.a.offsetWidth,this.f["sans-serif"]=this.m.a.offsetWidth,this.A=et(),L(this)};var ot=null;G.prototype.g=function(t){var e=this.a;e.g&&u(e.f,[e.a.c("wf",t.c,k(t).toString(),"active")],[e.a.c("wf",t.c,k(t).toString(),"loading"),e.a.c("wf",t.c,k(t).toString(),"inactive")]),S(e,"fontactive",t),this.m=!0,R(this)},G.prototype.h=function(t){var e=this.a;if(e.g){var n=l(e.f,e.a.c("wf",t.c,k(t).toString(),"active")),a=[],i=[e.a.c("wf",t.c,k(t).toString(),"loading")];n||a.push(e.a.c("wf",t.c,k(t).toString(),"inactive")),u(e.f,a,i)}S(e,"fontinactive",t),R(this)},B.prototype.load=function(t){this.c=new i(this.j,t.context||this.j),this.g=!1!==t.events,this.f=!1!==t.classes,q(this,new T(this.c,t),t)},X.prototype.load=function(t){function e(){if(o["__mti_fntLst"+a]){var n,i=o["__mti_fntLst"+a](),r=[];if(i)for(var s=0;s<i.length;s++){var u=i[s].fontfamily;void 0!=i[s].fontStyle&&void 0!=i[s].fontWeight?(n=i[s].fontStyle+i[s].fontWeight,r.push(new y(u,n))):r.push(new y(u))}t(r)}else setTimeout(function(){e()},50)}var n=this,a=n.a.projectId,i=n.a.version;if(a){var o=n.c.o;h(this.c,(n.a.api||"https://fast.fonts.net/jsapi")+"/"+a+".js"+(i?"?v="+i:""),function(i){i?t([]):(o["__MonotypeConfiguration__"+a]=function(){return n.a},e())}).id="__MonotypeAPIScript__"+a}else t([])},H.prototype.load=function(t){var e,n,a=this.a.urls||[],i=this.a.families||[],o=this.a.testStrings||{},r=new d;for(e=0,n=a.length;e<n;e++)f(this.c,a[e],p(r));var s=[];for(e=0,n=i.length;e<n;e++)if(a=i[e].split(":"),a[1])for(var u=a[1].split(","),l=0;l<u.length;l+=1)s.push(new y(a[0],u[l]));else s.push(new y(a[0]));g(r,function(){t(s,o)})};var rt="https://fonts.googleapis.com/css",st={latin:"BESbswy","latin-ext":"çöüğş",cyrillic:"йяЖ",greek:"αβΣ",khmer:"កខគ",Hanuman:"កខគ"},ut={thin:"1",extralight:"2","extra-light":"2",ultralight:"2","ultra-light":"2",light:"3",regular:"4",book:"4",medium:"5","semi-bold":"6",semibold:"6","demi-bold":"6",demibold:"6",bold:"7","extra-bold":"8",extrabold:"8","ultra-bold":"8",ultrabold:"8",black:"9",heavy:"9",l:"3",r:"4",b:"7"},lt={i:"i",italic:"i",n:"n",normal:"n"},ct=/^(thin|(?:(?:extra|ultra)-?)?light|regular|book|medium|(?:(?:semi|demi|extra|ultra)-?)?bold|black|heavy|l|r|b|[1-9]00)?(n|i|normal|italic)?$/,ft={Arimo:!0,Cousine:!0,Tinos:!0};Q.prototype.load=function(t){var e=new d,n=this.c,a=new $(this.a.api,this.a.text),i=this.a.families;z(a,i);var o=new V(i);J(o),f(n,K(a),p(e)),g(e,function(){t(o.a,o.c,ft)})},Z.prototype.load=function(t){var e=this.a.id,n=this.c.o;e?h(this.c,(this.a.api||"https://use.typekit.net")+"/"+e+".js",function(e){if(e)t([]);else if(n.Typekit&&n.Typekit.config&&n.Typekit.config.fn){e=n.Typekit.config.fn;for(var a=[],i=0;i<e.length;i+=2)for(var o=e[i],r=e[i+1],s=0;s<r.length;s++)a.push(new y(o,r[s]));try{n.Typekit.load({events:!1,classes:!1,async:!0})}catch(u){}t(a)}},2e3):t([])},tt.prototype.load=function(t){var e=this.f.id,n=this.c.o,a=this;e?(n.__webfontfontdeckmodule__||(n.__webfontfontdeckmodule__={}),n.__webfontfontdeckmodule__[e]=function(e,n){for(var i=0,o=n.fonts.length;i<o;++i){var r=n.fonts[i];a.a.push(new y(r.name,O("font-weight:"+r.weight+";font-style:"+r.style)))}t(a.a)},h(this.c,(this.f.api||"https://f.fontdeck.com/s/css/js/")+c(this.c)+"/"+e+".js",function(e){e&&t([])})):t([])};var ht=new B(window);ht.a.c.custom=function(t,e){return new H(e,t)},ht.a.c.fontdeck=function(t,e){return new tt(e,t)},ht.a.c.monotype=function(t,e){return new X(e,t)},ht.a.c.typekit=function(t,e){return new Z(e,t)},ht.a.c.google=function(t,e){return new Q(e,t)};var dt={load:a(ht.load,ht)};"function"==typeof define&&define.amd?define(function(){return dt}):"undefined"!=typeof e&&e.exports?e.exports=dt:(window.WebFont=dt,window.WebFontConfig&&ht.load(window.WebFontConfig))}()},{}],2:[function(t,e,n){"use strict";function a(t){return t&&t.__esModule?t:{"default":t}}function i(t){if(t&&t.__esModule)return t;var e={};if(null!=t)for(var n in t)Object.prototype.hasOwnProperty.call(t,n)&&(e[n]=t[n]);return e["default"]=t,e}function o(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function r(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}function s(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}var u=t("webfontloader"),l=i(u),c=t("states/MainMenuState.js"),f=a(c),h=t("states/GamePlatformState.js"),d=a(h),p=t("states/EndGameStateWin.js"),g=a(p),m=t("states/EndGameStateLose.js"),v=a(m),y=t("states/TutorialState.js"),b=a(y),w=function(t){function e(){o(this,e);var t=r(this,(e.__proto__||Object.getPrototypeOf(e)).call(this,1090,1100,Phaser.AUTO,"content",null));return l.load({google:{families:["Fredoka One"]}}),t.state.add("MainMenuState",f["default"],!1),t.state.add("GamePlatformState",d["default"],!1),t.state.add("EndGameStateWin",g["default"],!1),t.state.add("EndGameStateLose",v["default"],!1),t.state.add("TutorialState",b["default"],!1),t.state.start("MainMenuState"),t}return s(e,t),e}(Phaser.Game);new w},{"states/EndGameStateLose.js":3,"states/EndGameStateWin.js":4,"states/GamePlatformState.js":5,"states/MainMenuState.js":6,"states/TutorialState.js":7,webfontloader:1}],3:[function(t,e,n){"use strict";function a(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function i(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}function o(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}Object.defineProperty(n,"__esModule",{value:!0});var r=function(){function t(t,e){for(var n=0;n<e.length;n++){var a=e[n];a.enumerable=a.enumerable||!1,a.configurable=!0,"value"in a&&(a.writable=!0),Object.defineProperty(t,a.key,a)}}return function(e,n,a){return n&&t(e.prototype,n),a&&t(e,a),e}}(),s=function(t){function e(){return a(this,e),i(this,(e.__proto__||Object.getPrototypeOf(e)).apply(this,arguments))}return o(e,t),r(e,[{key:"preload",value:function(){this.load.image("background","assets/images/backgrounds/background.jpg"),this.load.image("loseText","assets/images/text-timeup.png"),this.load.image("playButton","assets/images/btn-play.png")}},{key:"create",value:function(){var t=this,e=this.world,n=e.centerX,a=e.centerY;this.stage.backgroundColor="#bbb980";var i=this.add.sprite(0,0,"background");i.height=1100;var o=this.add.sprite(n,a,"loseText");o.anchor.setTo(.5,.5),i.tint=12303291;var r=this.add.button(n,a+170,"playButton",function(){t.state.start("GamePlatformState",!0,!1,{score:200})});r.anchor.setTo(.5,.5),r.onInputDown.add(this.tint,r),r.onInputUp.add(this.unTint,r)}},{key:"tint",value:function(){this.tint=12303291}},{key:"unTint",value:function(){this.tint=16777215}}]),e}(Phaser.State);n["default"]=s},{}],4:[function(t,e,n){"use strict";function a(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function i(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}function o(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}Object.defineProperty(n,"__esModule",{value:!0});var r=function(){function t(t,e){for(var n=0;n<e.length;n++){var a=e[n];a.enumerable=a.enumerable||!1,a.configurable=!0,"value"in a&&(a.writable=!0),Object.defineProperty(t,a.key,a)}}return function(e,n,a){return n&&t(e.prototype,n),a&&t(e,a),e}}(),s=function(t){function e(){return a(this,e),i(this,(e.__proto__||Object.getPrototypeOf(e)).apply(this,arguments))}return o(e,t),r(e,[{key:"preload",value:function(){this.load.image("background","assets/images/backgrounds/background.jpg"),this.load.image("playButton","assets/images/btn-play.png")}},{key:"create",value:function(){var t=this,e=this.world,n=e.centerX,a=e.centerY;this.stage.backgroundColor="#fffcad";var i=this.add.sprite(0,0,"background");i.height=1100,i.tint=12303291;var o=this.add.button(n,a+170,"playButton",function(){t.state.start("GamePlatformState",!0,!1,{score:200})});o.anchor.setTo(.5,.5),o.onInputDown.add(this.tint,o),o.onInputUp.add(this.unTint,o);var r=this.add.text(n,a-300,"YOU WIN!",{font:"160px Fredoka One",fill:"#ffffff",align:"center"});r.anchor.setTo(.5,.5)}},{key:"tint",value:function(){this.tint=12303291}},{key:"unTint",value:function(){this.tint=16777215}}]),e}(Phaser.State);n["default"]=s},{}],5:[function(t,e,n){"use strict";function a(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function i(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}function o(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}Object.defineProperty(n,"__esModule",{value:!0});var r=function(){function t(t,e){for(var n=0;n<e.length;n++){var a=e[n];a.enumerable=a.enumerable||!1,a.configurable=!0,"value"in a&&(a.writable=!0),Object.defineProperty(t,a.key,a)}}return function(e,n,a){return n&&t(e.prototype,n),a&&t(e,a),e}}(),s=t("./helpers"),u=100,l=["donut-01","donut-02","donut-03","donut-04","donut-05","donut-06"],c=300,f=300,h=void 0,d="on",p=void 0,g=void 0,m=void 0,v=void 0,y=["particle-1","particle-2","particle-3"],b=void 0,w=function(t){function e(){return a(this,e),i(this,(e.__proto__||Object.getPrototypeOf(e)).apply(this,arguments))}return o(e,t),r(e,[{key:"preload",value:function(){this.load.image("background","assets/images/backgrounds/background.jpg"),this.load.image("scoreTable","assets/images/bg-score.png"),this.load.image("donut-01","assets/images/game/gem-01.png"),this.load.image("donut-02","assets/images/game/gem-02.png"),this.load.image("donut-03","assets/images/game/gem-03.png"),this.load.image("donut-04","assets/images/game/gem-04.png"),this.load.image("donut-05","assets/images/game/gem-05.png"),this.load.image("donut-06","assets/images/game/gem-06.png"),this.load.image("donut-07","assets/images/game/gem-07.png"),this.load.image("donut-08","assets/images/game/gem-08.png"),this.load.image("donut-09","assets/images/game/gem-09.png"),this.load.image("donut-10","assets/images/game/gem-10.png"),this.load.image("donut-11","assets/images/game/gem-11.png"),this.load.image("donut-12","assets/images/game/gem-12.png"),this.load.image("hand","assets/images/game/hand.png"),this.load.image("mute","assets/images/btn-sfx.png"),this.load.audio("soundTrack","assets/audio/background.mp3"),this.load.audio("missSound","assets/audio/miss-sound.mp3"),this.load.audio("killSound","assets/audio/kill.mp3"),this.load.audio("select-1","assets/audio/select-1.mp3"),this.load.audio("select-2","assets/audio/select-2.mp3"),this.load.audio("select-3","assets/audio/select-3.mp3"),this.load.audio("select-4","assets/audio/select-4.mp3"),this.load.audio("select-5","assets/audio/select-5.mp3"),this.load.audio("select-6","assets/audio/select-6.mp3"),this.load.audio("select-7","assets/audio/select-7.mp3"),this.load.audio("select-8","assets/audio/select-8.mp3"),this.load.audio("select-9","assets/audio/select-9.mp3"),this.load.image("particle-1","assets/images/particles/particle_ex1.png"),this.load.image("particle-2","assets/images/particles/particle_ex2.png"),this.load.image("particle-3","assets/images/particles/particle_ex3.png")}},{key:"create",value:function(){var t=this,e=this.world,n=e.centerX,a=e.centerY;this.stage.backgroundColor="#fffcad";var i=this.add.sprite(0,0,"background");i.height=1100;var o=this.add.sprite(n-200,10,"scoreTable");o.anchor.setTo(.5,0),m=0;var r=this.add.text(n-190,70,"0",{font:"64px Fredoka One",fill:"#ff3030",align:"center"}),f=this.add.group();(0,s.generateField)(f,l),f.align(s.FIELD_COLUMNS,-1,u,u),f.x=n-u*s.FIELD_COLUMNS/2,f.y=a+100-u*s.FIELD_ROWS/2,f.setAll("inputEnabled",!0),f.setAll("input.useHandCursor",!0),f.callAll("events.onInputDown.add","events.onInputDown",function(e){t.clickHandler(e,r)},this),b=null,p=this.add.audio("missSound"),h=this.add.audio("soundTrack"),h.loop=!0,h.play();var g=this.add.button(900,50,"mute",function(){"on"===d?(h.stop(),d="off"):(h.play(),d="on")});g.onInputDown.add(this.tint,g),g.onInputUp.add(this.unTint,g),this.time.events.add(Phaser.Timer.SECOND*c,function(){t.state.start("EndGameStateLose"),h.destroy(),t.cache.removeSound("soundTrack")},this);var v=c,y=this.add.text(n+100,100,(0,s.formatTime)(v),{font:"64px Fredoka One",fill:"#ff3030",align:"center"});this.game.time.events.loop(Phaser.Timer.SECOND,function(){v--,y.setText((0,s.formatTime)(v))},this)}},{key:"update",value:function(){}},{key:"render",value:function(){}},{key:"clickHandler",value:function(t,e){var n=t.parent.getChildIndex(t);if(null===b)t.height=120,t.width=120,t.x-=10,t.y-=10,b=n;else if(n===b)t.height=100,t.width=100,t.x+=10,t.y+=10,b=null;else{var a=t.parent.getChildAt(b);a.height=100,a.width=100,a.x+=10,a.y+=10;var i=t.parent.children.map(function(t){return t.key}),o=(0,s.getRemovableDonuts)(i,b,n);if(o.length){var r=a.key;a.loadTexture(t.key),t.loadTexture(r);for(var u=1;o.length;){var c=o.map(function(e){return t.parent.getChildAt(e)});this.animateRemoval(c,u),m+=u*o.length,e.setText(""+m),c.forEach(function(t){return t.loadTexture(Phaser.ArrayUtils.getRandomItem(l))}),i=t.parent.children.map(function(t){return t.key}),o=(0,s.getRemovableDonuts)(i),u<=9&&u++}}else p.play();b=null}m>=f&&(this.state.start("EndGameStateWin"),h.destroy(),this.cache.removeSound("soundTrack"))}},{key:"animateRemoval",value:function(t,e){g=this.add.audio("select-"+e),g.volume=.5,g.play();var n=t[Math.floor(t.length/2)];v=this.add.emitter(50,50,100),v.makeParticles(y),n.addChild(v),v.minParticleSpeed.setTo(-600,-600),v.maxParticleSpeed.setTo(600,600),v.gravity=0,v.start(!0,1e3,null,10)}},{key:"tint",value:function(){this.tint=12303291}},{key:"unTint",value:function(){this.tint=16777215}}]),e}(Phaser.State);n["default"]=w},{"./helpers":8}],6:[function(t,e,n){"use strict";function a(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function i(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}function o(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}Object.defineProperty(n,"__esModule",{value:!0});var r=function(){function t(t,e){for(var n=0;n<e.length;n++){var a=e[n];a.enumerable=a.enumerable||!1,a.configurable=!0,"value"in a&&(a.writable=!0),Object.defineProperty(t,a.key,a)}}return function(e,n,a){return n&&t(e.prototype,n),a&&t(e,a),e}}(),s=function(t){function e(){return a(this,e),i(this,(e.__proto__||Object.getPrototypeOf(e)).apply(this,arguments))}return o(e,t),r(e,[{key:"preload",value:function(){this.load.image("background","assets/images/backgrounds/background.jpg"),this.load.image("bigDonut","assets/images/donut.png"),this.load.image("bigShadow","assets/images/big-shadow.png"),this.load.image("logo","assets/images/donuts_logo.png"),this.load.image("playButton","assets/images/btn-play.png"),this.load.image("soundControlButton","assets/images/btn-sfx.png")}},{key:"create",value:function(){var t=this,e=this.world,n=e.centerX,a=e.centerY;this.stage.backgroundColor="#fffcad";var i=this.add.sprite(0,0,"background");i.height=1100;var o=this.add.sprite(n,a,"bigShadow");o.anchor.setTo(.5,.5);var r=this.add.sprite(n,a,"bigDonut");r.anchor.setTo(.5,.5);var s=this.add.sprite(n,a-150,"logo");s.anchor.setTo(.5,.5);var u=this.add.button(n,a+170,"playButton",function(){t.state.start("GamePlatformState",!0,!1,{score:200})});u.anchor.setTo(.5,.5),u.onInputDown.add(this.tint,u),u.onInputUp.add(this.unTint,u);var l=this.add.text(n,a+300,"tutorial",{font:"60px Fredoka One",fill:"#ffffff",align:"center"});l.anchor.setTo(.5),l.inputEnabled=!0,l.events.onInputUp.add(function(){t.state.start("TutorialState")},this)}},{key:"tint",value:function(){this.tint=12303291}},{key:"unTint",value:function(){this.tint=16777215}}]),e}(Phaser.State);n["default"]=s},{}],7:[function(t,e,n){"use strict";function a(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function i(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}function o(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}Object.defineProperty(n,"__esModule",{value:!0});var r=function(){function t(t,e){for(var n=0;n<e.length;n++){var a=e[n];a.enumerable=a.enumerable||!1,a.configurable=!0,"value"in a&&(a.writable=!0),Object.defineProperty(t,a.key,a)}}return function(e,n,a){return n&&t(e.prototype,n),a&&t(e,a),e}}(),s=function(t){function e(){return a(this,e),i(this,(e.__proto__||Object.getPrototypeOf(e)).apply(this,arguments))}return o(e,t),r(e,[{key:"preload",value:function(){this.load.image("background","assets/images/backgrounds/background.jpg"),this.load.image("playButton","assets/images/btn-play.png")}},{key:"create",value:function(){var t=this,e=this.world,n=e.centerX;e.centerY;this.stage.backgroundColor="#fffcad";var a=this.add.sprite(0,0,"background");a.height=1100;var i=this.add.text(n,100,"TUTORIAL",{font:"100px Fredoka One",fill:"#000000",align:"center"});i.anchor.setTo(.5,.5);var o=this.add.text(n,200,'In the main menu press "play"',{font:"60px Fredoka One",fill:"#000000",align:"center"});o.anchor.setTo(.5,.5);var r=this.add.text(n,300,"Now, when you are on the playground, do following:",{font:"40px Fredoka One",fill:"#000000",align:"center"});r.anchor.setTo(.5,.5);var s=this.add.text(n,400,"You need to mach 3 or more donuts in line",{font:"50px Fredoka One",fill:"#000000",align:"center"});s.anchor.setTo(.5,.5);var u=this.add.text(n,500,"Choose one donut by clicking on him",{font:"60px Fredoka One",fill:"#000000",align:"center"});u.anchor.setTo(.5,.5);var l=this.add.text(n,600,"Click on a close donut to try a mach",{font:"60px Fredoka One",fill:"#000000",align:"center"});l.anchor.setTo(.5,.5);var c=this.add.text(n,700,"For every mach you get points, more in one go - better",{font:"40px Fredoka One",fill:"#000000",align:"center"});c.anchor.setTo(.5,.5);var f=this.add.text(n,800,"Get to 300 and YOU will WIN!",{font:"60px Fredoka One",fill:"#000000",align:"center"});f.anchor.setTo(.5,.5);var h=this.add.text(n,1e3,"back to main menu",{font:"80px Fredoka One",fill:"#000000",align:"center"});h.anchor.setTo(.5),h.inputEnabled=!0,h.events.onInputUp.add(function(){t.state.start("MainMenuState")},this)}},{key:"tint",value:function(){this.tint=12303291}},{key:"unTint",value:function(){this.tint=16777215}}]),e}(Phaser.State);n["default"]=s},{}],8:[function(t,e,n){"use strict";function a(t){if(Array.isArray(t)){for(var e=0,n=Array(t.length);e<t.length;e++)n[e]=t[e];return n}return Array.from(t)}function i(t,e,n,i){var o=[].concat(a(e));if(i>1){var r=t[t.length-1].key,s=t[t.length-2].key;r===s&&(o=o.filter(function(t){return t!==r}))}if(n>1){var l=t[(n-1)*u+i].key,c=t[(n-2)*u+i].key;l===c&&(o=o.filter(function(t){return t!==l}))}return o}function o(t,e){for(var n=0;n<l;n++)for(var a=0;a<u;a++){var o=Phaser.ArrayUtils.getRandomItem(i(t.children,e,n,a));t.create(0,0,o)}}function r(t,e,n){var i=[].concat(a(t));if(e&&n){var o=Math.abs(e-n);if(1!==o&&o!==u)return[];var r=i[e];i[e]=i[n],i[n]=r}for(var s=new Array(t.length).fill(0),c=0;c<l;c++)for(var f=0;f<u;f++){var h=c*u+f;f>1&&i[h]===i[h-1]&&i[h]===i[h-2]&&(s[h]=1,s[h-1]=1,s[h-2]=1),c>1&&i[h]===i[h-u]&&i[h]===i[h-2*u]&&(s[h]=1,s[h-u]=1,s[h-2*u]=1)}var d=[];return s.forEach(function(t,e){t&&d.push(e)}),d}function s(t){var e=String(t%60).padStart(2,"0"),n=String(Math.floor(t/60)).padStart(2,"0");return n+":"+e}Object.defineProperty(n,"__esModule",{value:!0}),n.generateField=o,n.getRemovableDonuts=r,n.formatTime=s;var u=n.FIELD_COLUMNS=10,l=n.FIELD_ROWS=8},{}]},{},[2]);
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+/* Web Font Loader v1.6.28 - (c) Adobe Systems, Google. License: Apache 2.0 */(function(){function aa(a,b,c){return a.call.apply(a.bind,arguments)}function ba(a,b,c){if(!a)throw Error();if(2<arguments.length){var d=Array.prototype.slice.call(arguments,2);return function(){var c=Array.prototype.slice.call(arguments);Array.prototype.unshift.apply(c,d);return a.apply(b,c)}}return function(){return a.apply(b,arguments)}}function p(a,b,c){p=Function.prototype.bind&&-1!=Function.prototype.bind.toString().indexOf("native code")?aa:ba;return p.apply(null,arguments)}var q=Date.now||function(){return+new Date};function ca(a,b){this.a=a;this.o=b||a;this.c=this.o.document}var da=!!window.FontFace;function t(a,b,c,d){b=a.c.createElement(b);if(c)for(var e in c)c.hasOwnProperty(e)&&("style"==e?b.style.cssText=c[e]:b.setAttribute(e,c[e]));d&&b.appendChild(a.c.createTextNode(d));return b}function u(a,b,c){a=a.c.getElementsByTagName(b)[0];a||(a=document.documentElement);a.insertBefore(c,a.lastChild)}function v(a){a.parentNode&&a.parentNode.removeChild(a)}
+function w(a,b,c){b=b||[];c=c||[];for(var d=a.className.split(/\s+/),e=0;e<b.length;e+=1){for(var f=!1,g=0;g<d.length;g+=1)if(b[e]===d[g]){f=!0;break}f||d.push(b[e])}b=[];for(e=0;e<d.length;e+=1){f=!1;for(g=0;g<c.length;g+=1)if(d[e]===c[g]){f=!0;break}f||b.push(d[e])}a.className=b.join(" ").replace(/\s+/g," ").replace(/^\s+|\s+$/,"")}function y(a,b){for(var c=a.className.split(/\s+/),d=0,e=c.length;d<e;d++)if(c[d]==b)return!0;return!1}
+function ea(a){return a.o.location.hostname||a.a.location.hostname}function z(a,b,c){function d(){m&&e&&f&&(m(g),m=null)}b=t(a,"link",{rel:"stylesheet",href:b,media:"all"});var e=!1,f=!0,g=null,m=c||null;da?(b.onload=function(){e=!0;d()},b.onerror=function(){e=!0;g=Error("Stylesheet failed to load");d()}):setTimeout(function(){e=!0;d()},0);u(a,"head",b)}
+function A(a,b,c,d){var e=a.c.getElementsByTagName("head")[0];if(e){var f=t(a,"script",{src:b}),g=!1;f.onload=f.onreadystatechange=function(){g||this.readyState&&"loaded"!=this.readyState&&"complete"!=this.readyState||(g=!0,c&&c(null),f.onload=f.onreadystatechange=null,"HEAD"==f.parentNode.tagName&&e.removeChild(f))};e.appendChild(f);setTimeout(function(){g||(g=!0,c&&c(Error("Script load timeout")))},d||5E3);return f}return null};function B(){this.a=0;this.c=null}function C(a){a.a++;return function(){a.a--;D(a)}}function E(a,b){a.c=b;D(a)}function D(a){0==a.a&&a.c&&(a.c(),a.c=null)};function F(a){this.a=a||"-"}F.prototype.c=function(a){for(var b=[],c=0;c<arguments.length;c++)b.push(arguments[c].replace(/[\W_]+/g,"").toLowerCase());return b.join(this.a)};function G(a,b){this.c=a;this.f=4;this.a="n";var c=(b||"n4").match(/^([nio])([1-9])$/i);c&&(this.a=c[1],this.f=parseInt(c[2],10))}function fa(a){return H(a)+" "+(a.f+"00")+" 300px "+I(a.c)}function I(a){var b=[];a=a.split(/,\s*/);for(var c=0;c<a.length;c++){var d=a[c].replace(/['"]/g,"");-1!=d.indexOf(" ")||/^\d/.test(d)?b.push("'"+d+"'"):b.push(d)}return b.join(",")}function J(a){return a.a+a.f}function H(a){var b="normal";"o"===a.a?b="oblique":"i"===a.a&&(b="italic");return b}
+function ga(a){var b=4,c="n",d=null;a&&((d=a.match(/(normal|oblique|italic)/i))&&d[1]&&(c=d[1].substr(0,1).toLowerCase()),(d=a.match(/([1-9]00|normal|bold)/i))&&d[1]&&(/bold/i.test(d[1])?b=7:/[1-9]00/.test(d[1])&&(b=parseInt(d[1].substr(0,1),10))));return c+b};function ha(a,b){this.c=a;this.f=a.o.document.documentElement;this.h=b;this.a=new F("-");this.j=!1!==b.events;this.g=!1!==b.classes}function ia(a){a.g&&w(a.f,[a.a.c("wf","loading")]);K(a,"loading")}function L(a){if(a.g){var b=y(a.f,a.a.c("wf","active")),c=[],d=[a.a.c("wf","loading")];b||c.push(a.a.c("wf","inactive"));w(a.f,c,d)}K(a,"inactive")}function K(a,b,c){if(a.j&&a.h[b])if(c)a.h[b](c.c,J(c));else a.h[b]()};function ja(){this.c={}}function ka(a,b,c){var d=[],e;for(e in b)if(b.hasOwnProperty(e)){var f=a.c[e];f&&d.push(f(b[e],c))}return d};function M(a,b){this.c=a;this.f=b;this.a=t(this.c,"span",{"aria-hidden":"true"},this.f)}function N(a){u(a.c,"body",a.a)}function O(a){return"display:block;position:absolute;top:-9999px;left:-9999px;font-size:300px;width:auto;height:auto;line-height:normal;margin:0;padding:0;font-variant:normal;white-space:nowrap;font-family:"+I(a.c)+";"+("font-style:"+H(a)+";font-weight:"+(a.f+"00")+";")};function P(a,b,c,d,e,f){this.g=a;this.j=b;this.a=d;this.c=c;this.f=e||3E3;this.h=f||void 0}P.prototype.start=function(){var a=this.c.o.document,b=this,c=q(),d=new Promise(function(d,e){function f(){q()-c>=b.f?e():a.fonts.load(fa(b.a),b.h).then(function(a){1<=a.length?d():setTimeout(f,25)},function(){e()})}f()}),e=null,f=new Promise(function(a,d){e=setTimeout(d,b.f)});Promise.race([f,d]).then(function(){e&&(clearTimeout(e),e=null);b.g(b.a)},function(){b.j(b.a)})};function Q(a,b,c,d,e,f,g){this.v=a;this.B=b;this.c=c;this.a=d;this.s=g||"BESbswy";this.f={};this.w=e||3E3;this.u=f||null;this.m=this.j=this.h=this.g=null;this.g=new M(this.c,this.s);this.h=new M(this.c,this.s);this.j=new M(this.c,this.s);this.m=new M(this.c,this.s);a=new G(this.a.c+",serif",J(this.a));a=O(a);this.g.a.style.cssText=a;a=new G(this.a.c+",sans-serif",J(this.a));a=O(a);this.h.a.style.cssText=a;a=new G("serif",J(this.a));a=O(a);this.j.a.style.cssText=a;a=new G("sans-serif",J(this.a));a=
+O(a);this.m.a.style.cssText=a;N(this.g);N(this.h);N(this.j);N(this.m)}var R={D:"serif",C:"sans-serif"},S=null;function T(){if(null===S){var a=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))/.exec(window.navigator.userAgent);S=!!a&&(536>parseInt(a[1],10)||536===parseInt(a[1],10)&&11>=parseInt(a[2],10))}return S}Q.prototype.start=function(){this.f.serif=this.j.a.offsetWidth;this.f["sans-serif"]=this.m.a.offsetWidth;this.A=q();U(this)};
+function la(a,b,c){for(var d in R)if(R.hasOwnProperty(d)&&b===a.f[R[d]]&&c===a.f[R[d]])return!0;return!1}function U(a){var b=a.g.a.offsetWidth,c=a.h.a.offsetWidth,d;(d=b===a.f.serif&&c===a.f["sans-serif"])||(d=T()&&la(a,b,c));d?q()-a.A>=a.w?T()&&la(a,b,c)&&(null===a.u||a.u.hasOwnProperty(a.a.c))?V(a,a.v):V(a,a.B):ma(a):V(a,a.v)}function ma(a){setTimeout(p(function(){U(this)},a),50)}function V(a,b){setTimeout(p(function(){v(this.g.a);v(this.h.a);v(this.j.a);v(this.m.a);b(this.a)},a),0)};function W(a,b,c){this.c=a;this.a=b;this.f=0;this.m=this.j=!1;this.s=c}var X=null;W.prototype.g=function(a){var b=this.a;b.g&&w(b.f,[b.a.c("wf",a.c,J(a).toString(),"active")],[b.a.c("wf",a.c,J(a).toString(),"loading"),b.a.c("wf",a.c,J(a).toString(),"inactive")]);K(b,"fontactive",a);this.m=!0;na(this)};
+W.prototype.h=function(a){var b=this.a;if(b.g){var c=y(b.f,b.a.c("wf",a.c,J(a).toString(),"active")),d=[],e=[b.a.c("wf",a.c,J(a).toString(),"loading")];c||d.push(b.a.c("wf",a.c,J(a).toString(),"inactive"));w(b.f,d,e)}K(b,"fontinactive",a);na(this)};function na(a){0==--a.f&&a.j&&(a.m?(a=a.a,a.g&&w(a.f,[a.a.c("wf","active")],[a.a.c("wf","loading"),a.a.c("wf","inactive")]),K(a,"active")):L(a.a))};function oa(a){this.j=a;this.a=new ja;this.h=0;this.f=this.g=!0}oa.prototype.load=function(a){this.c=new ca(this.j,a.context||this.j);this.g=!1!==a.events;this.f=!1!==a.classes;pa(this,new ha(this.c,a),a)};
+function qa(a,b,c,d,e){var f=0==--a.h;(a.f||a.g)&&setTimeout(function(){var a=e||null,m=d||null||{};if(0===c.length&&f)L(b.a);else{b.f+=c.length;f&&(b.j=f);var h,l=[];for(h=0;h<c.length;h++){var k=c[h],n=m[k.c],r=b.a,x=k;r.g&&w(r.f,[r.a.c("wf",x.c,J(x).toString(),"loading")]);K(r,"fontloading",x);r=null;if(null===X)if(window.FontFace){var x=/Gecko.*Firefox\/(\d+)/.exec(window.navigator.userAgent),xa=/OS X.*Version\/10\..*Safari/.exec(window.navigator.userAgent)&&/Apple/.exec(window.navigator.vendor);
+X=x?42<parseInt(x[1],10):xa?!1:!0}else X=!1;X?r=new P(p(b.g,b),p(b.h,b),b.c,k,b.s,n):r=new Q(p(b.g,b),p(b.h,b),b.c,k,b.s,a,n);l.push(r)}for(h=0;h<l.length;h++)l[h].start()}},0)}function pa(a,b,c){var d=[],e=c.timeout;ia(b);var d=ka(a.a,c,a.c),f=new W(a.c,b,e);a.h=d.length;b=0;for(c=d.length;b<c;b++)d[b].load(function(b,d,c){qa(a,f,b,d,c)})};function ra(a,b){this.c=a;this.a=b}
+ra.prototype.load=function(a){function b(){if(f["__mti_fntLst"+d]){var c=f["__mti_fntLst"+d](),e=[],h;if(c)for(var l=0;l<c.length;l++){var k=c[l].fontfamily;void 0!=c[l].fontStyle&&void 0!=c[l].fontWeight?(h=c[l].fontStyle+c[l].fontWeight,e.push(new G(k,h))):e.push(new G(k))}a(e)}else setTimeout(function(){b()},50)}var c=this,d=c.a.projectId,e=c.a.version;if(d){var f=c.c.o;A(this.c,(c.a.api||"https://fast.fonts.net/jsapi")+"/"+d+".js"+(e?"?v="+e:""),function(e){e?a([]):(f["__MonotypeConfiguration__"+
+d]=function(){return c.a},b())}).id="__MonotypeAPIScript__"+d}else a([])};function sa(a,b){this.c=a;this.a=b}sa.prototype.load=function(a){var b,c,d=this.a.urls||[],e=this.a.families||[],f=this.a.testStrings||{},g=new B;b=0;for(c=d.length;b<c;b++)z(this.c,d[b],C(g));var m=[];b=0;for(c=e.length;b<c;b++)if(d=e[b].split(":"),d[1])for(var h=d[1].split(","),l=0;l<h.length;l+=1)m.push(new G(d[0],h[l]));else m.push(new G(d[0]));E(g,function(){a(m,f)})};function ta(a,b){a?this.c=a:this.c=ua;this.a=[];this.f=[];this.g=b||""}var ua="https://fonts.googleapis.com/css";function va(a,b){for(var c=b.length,d=0;d<c;d++){var e=b[d].split(":");3==e.length&&a.f.push(e.pop());var f="";2==e.length&&""!=e[1]&&(f=":");a.a.push(e.join(f))}}
+function wa(a){if(0==a.a.length)throw Error("No fonts to load!");if(-1!=a.c.indexOf("kit="))return a.c;for(var b=a.a.length,c=[],d=0;d<b;d++)c.push(a.a[d].replace(/ /g,"+"));b=a.c+"?family="+c.join("%7C");0<a.f.length&&(b+="&subset="+a.f.join(","));0<a.g.length&&(b+="&text="+encodeURIComponent(a.g));return b};function ya(a){this.f=a;this.a=[];this.c={}}
+var za={latin:"BESbswy","latin-ext":"\u00e7\u00f6\u00fc\u011f\u015f",cyrillic:"\u0439\u044f\u0416",greek:"\u03b1\u03b2\u03a3",khmer:"\u1780\u1781\u1782",Hanuman:"\u1780\u1781\u1782"},Aa={thin:"1",extralight:"2","extra-light":"2",ultralight:"2","ultra-light":"2",light:"3",regular:"4",book:"4",medium:"5","semi-bold":"6",semibold:"6","demi-bold":"6",demibold:"6",bold:"7","extra-bold":"8",extrabold:"8","ultra-bold":"8",ultrabold:"8",black:"9",heavy:"9",l:"3",r:"4",b:"7"},Ba={i:"i",italic:"i",n:"n",normal:"n"},
+Ca=/^(thin|(?:(?:extra|ultra)-?)?light|regular|book|medium|(?:(?:semi|demi|extra|ultra)-?)?bold|black|heavy|l|r|b|[1-9]00)?(n|i|normal|italic)?$/;
+function Da(a){for(var b=a.f.length,c=0;c<b;c++){var d=a.f[c].split(":"),e=d[0].replace(/\+/g," "),f=["n4"];if(2<=d.length){var g;var m=d[1];g=[];if(m)for(var m=m.split(","),h=m.length,l=0;l<h;l++){var k;k=m[l];if(k.match(/^[\w-]+$/)){var n=Ca.exec(k.toLowerCase());if(null==n)k="";else{k=n[2];k=null==k||""==k?"n":Ba[k];n=n[1];if(null==n||""==n)n="4";else var r=Aa[n],n=r?r:isNaN(n)?"4":n.substr(0,1);k=[k,n].join("")}}else k="";k&&g.push(k)}0<g.length&&(f=g);3==d.length&&(d=d[2],g=[],d=d?d.split(","):
+g,0<d.length&&(d=za[d[0]])&&(a.c[e]=d))}a.c[e]||(d=za[e])&&(a.c[e]=d);for(d=0;d<f.length;d+=1)a.a.push(new G(e,f[d]))}};function Ea(a,b){this.c=a;this.a=b}var Fa={Arimo:!0,Cousine:!0,Tinos:!0};Ea.prototype.load=function(a){var b=new B,c=this.c,d=new ta(this.a.api,this.a.text),e=this.a.families;va(d,e);var f=new ya(e);Da(f);z(c,wa(d),C(b));E(b,function(){a(f.a,f.c,Fa)})};function Ga(a,b){this.c=a;this.a=b}Ga.prototype.load=function(a){var b=this.a.id,c=this.c.o;b?A(this.c,(this.a.api||"https://use.typekit.net")+"/"+b+".js",function(b){if(b)a([]);else if(c.Typekit&&c.Typekit.config&&c.Typekit.config.fn){b=c.Typekit.config.fn;for(var e=[],f=0;f<b.length;f+=2)for(var g=b[f],m=b[f+1],h=0;h<m.length;h++)e.push(new G(g,m[h]));try{c.Typekit.load({events:!1,classes:!1,async:!0})}catch(l){}a(e)}},2E3):a([])};function Ha(a,b){this.c=a;this.f=b;this.a=[]}Ha.prototype.load=function(a){var b=this.f.id,c=this.c.o,d=this;b?(c.__webfontfontdeckmodule__||(c.__webfontfontdeckmodule__={}),c.__webfontfontdeckmodule__[b]=function(b,c){for(var g=0,m=c.fonts.length;g<m;++g){var h=c.fonts[g];d.a.push(new G(h.name,ga("font-weight:"+h.weight+";font-style:"+h.style)))}a(d.a)},A(this.c,(this.f.api||"https://f.fontdeck.com/s/css/js/")+ea(this.c)+"/"+b+".js",function(b){b&&a([])})):a([])};var Y=new oa(window);Y.a.c.custom=function(a,b){return new sa(b,a)};Y.a.c.fontdeck=function(a,b){return new Ha(b,a)};Y.a.c.monotype=function(a,b){return new ra(b,a)};Y.a.c.typekit=function(a,b){return new Ga(b,a)};Y.a.c.google=function(a,b){return new Ea(b,a)};var Z={load:p(Y.load,Y)};"function"===typeof define&&define.amd?define(function(){return Z}):"undefined"!==typeof module&&module.exports?module.exports=Z:(window.WebFont=Z,window.WebFontConfig&&Y.load(window.WebFontConfig));}());
+
+},{}],2:[function(require,module,exports){
+'use strict';
+
+var _webfontloader = require('webfontloader');
+
+var WebFont = _interopRequireWildcard(_webfontloader);
+
+var _MainMenuState = require('states/MainMenuState.js');
+
+var _MainMenuState2 = _interopRequireDefault(_MainMenuState);
+
+var _GamePlatformState = require('states/GamePlatformState.js');
+
+var _GamePlatformState2 = _interopRequireDefault(_GamePlatformState);
+
+var _EndGameStateWin = require('states/EndGameStateWin.js');
+
+var _EndGameStateWin2 = _interopRequireDefault(_EndGameStateWin);
+
+var _EndGameStateLose = require('states/EndGameStateLose.js');
+
+var _EndGameStateLose2 = _interopRequireDefault(_EndGameStateLose);
+
+var _TutorialState = require('states/TutorialState.js');
+
+var _TutorialState2 = _interopRequireDefault(_TutorialState);
+
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function _interopRequireWildcard(obj) {
+    if (obj && obj.__esModule) {
+        return obj;
+    } else {
+        var newObj = {};if (obj != null) {
+            for (var key in obj) {
+                if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];
+            }
+        }newObj.default = obj;return newObj;
+    }
+}
+
+function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
+
+function _possibleConstructorReturn(self, call) {
+    if (!self) {
+        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }return call && (typeof call === "object" || typeof call === "function") ? call : self;
+}
+
+function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+        throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var Game = function (_Phaser$Game) {
+    _inherits(Game, _Phaser$Game);
+
+    function Game() {
+        _classCallCheck(this, Game);
+
+        var _this = _possibleConstructorReturn(this, (Game.__proto__ || Object.getPrototypeOf(Game)).call(this, 1090, 1100, Phaser.AUTO, 'content', null));
+
+        WebFont.load({
+            google: {
+                families: ['Fredoka One']
+            }
+        });
+        _this.state.add('MainMenuState', _MainMenuState2.default, false);
+        _this.state.add('GamePlatformState', _GamePlatformState2.default, false);
+        _this.state.add('EndGameStateWin', _EndGameStateWin2.default, false);
+        _this.state.add('EndGameStateLose', _EndGameStateLose2.default, false);
+        _this.state.add('TutorialState', _TutorialState2.default, false);
+        switch (sessionStorage.getItem('curState')) {
+            case 'GamePlatformState':
+                _this.state.start('GamePlatformState');
+                break;
+            case 'EndGameStateWin':
+                _this.state.start('EndGameStateWin');
+                break;
+            case 'EndGameStateLose':
+                _this.state.start('EndGameStateLose');
+                break;
+            case 'TutorialState':
+                _this.state.start('TutorialState');
+                break;
+            default:
+                _this.state.start('MainMenuState');
+        }
+        return _this;
+    }
+
+    return Game;
+}(Phaser.Game);
+
+new Game();
+
+},{"states/EndGameStateLose.js":3,"states/EndGameStateWin.js":4,"states/GamePlatformState.js":5,"states/MainMenuState.js":6,"states/TutorialState.js":7,"webfontloader":1}],3:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () {
+	function defineProperties(target, props) {
+		for (var i = 0; i < props.length; i++) {
+			var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+		}
+	}return function (Constructor, protoProps, staticProps) {
+		if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+	};
+}();
+
+function _classCallCheck(instance, Constructor) {
+	if (!(instance instanceof Constructor)) {
+		throw new TypeError("Cannot call a class as a function");
+	}
+}
+
+function _possibleConstructorReturn(self, call) {
+	if (!self) {
+		throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+	}return call && (typeof call === "object" || typeof call === "function") ? call : self;
+}
+
+function _inherits(subClass, superClass) {
+	if (typeof superClass !== "function" && superClass !== null) {
+		throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+	}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var EndGameStateLose = function (_Phaser$State) {
+	_inherits(EndGameStateLose, _Phaser$State);
+
+	function EndGameStateLose() {
+		_classCallCheck(this, EndGameStateLose);
+
+		return _possibleConstructorReturn(this, (EndGameStateLose.__proto__ || Object.getPrototypeOf(EndGameStateLose)).apply(this, arguments));
+	}
+
+	_createClass(EndGameStateLose, [{
+		key: 'preload',
+		value: function preload() {
+			this.load.image('background', 'assets/images/backgrounds/background.jpg');
+			this.load.image('loseText', 'assets/images/text-timeup.png');
+			this.load.image('playButton', 'assets/images/btn-play.png');
+		}
+	}, {
+		key: 'create',
+		value: function create() {
+			var _this2 = this;
+
+			var _world = this.world,
+			    centerX = _world.centerX,
+			    centerY = _world.centerY;
+
+			sessionStorage.setItem('curState', 'EndGameStateLose');
+
+			this.stage.backgroundColor = '#bbb980';
+			var backgroundImage = this.add.sprite(0, 0, 'background');
+			backgroundImage.height = 1100;
+			var loseText = this.add.sprite(centerX, centerY, 'loseText');
+			loseText.anchor.setTo(0.5, 0.5);
+			backgroundImage.tint = 0xbbbbbb;
+			var playButton = this.add.button(centerX, centerY + 170, 'playButton', function () {
+				_this2.state.start('GamePlatformState', true, false, { score: 200 });
+			});
+			playButton.anchor.setTo(0.5, 0.5);
+			playButton.onInputDown.add(this.tint, playButton);
+			playButton.onInputUp.add(this.unTint, playButton);
+			var backToMenu = this.add.text(centerX, 1000, 'back to main menu', { font: "80px Fredoka One", fill: "#FFFFFF", align: "center" });
+			backToMenu.anchor.setTo(0.5);
+			backToMenu.inputEnabled = true;
+			backToMenu.events.onInputUp.add(function () {
+				_this2.state.start('MainMenuState');
+			}, this);
+		}
+	}, {
+		key: 'tint',
+		value: function tint() {
+			this.tint = 0xbbbbbb;
+			// sound.play('');
+		}
+	}, {
+		key: 'unTint',
+		value: function unTint() {
+			this.tint = 0xFFFFFF;
+			// sound.play('');
+		}
+	}]);
+
+	return EndGameStateLose;
+}(Phaser.State);
+
+exports.default = EndGameStateLose;
+
+},{}],4:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () {
+	function defineProperties(target, props) {
+		for (var i = 0; i < props.length; i++) {
+			var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+		}
+	}return function (Constructor, protoProps, staticProps) {
+		if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+	};
+}();
+
+function _classCallCheck(instance, Constructor) {
+	if (!(instance instanceof Constructor)) {
+		throw new TypeError("Cannot call a class as a function");
+	}
+}
+
+function _possibleConstructorReturn(self, call) {
+	if (!self) {
+		throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+	}return call && (typeof call === "object" || typeof call === "function") ? call : self;
+}
+
+function _inherits(subClass, superClass) {
+	if (typeof superClass !== "function" && superClass !== null) {
+		throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+	}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var EndGameStateWin = function (_Phaser$State) {
+	_inherits(EndGameStateWin, _Phaser$State);
+
+	function EndGameStateWin() {
+		_classCallCheck(this, EndGameStateWin);
+
+		return _possibleConstructorReturn(this, (EndGameStateWin.__proto__ || Object.getPrototypeOf(EndGameStateWin)).apply(this, arguments));
+	}
+
+	_createClass(EndGameStateWin, [{
+		key: 'preload',
+		value: function preload() {
+			this.load.image('background', 'assets/images/backgrounds/background.jpg');
+			this.load.image('playButton', 'assets/images/btn-play.png');
+		}
+	}, {
+		key: 'create',
+		value: function create() {
+			var _this2 = this;
+
+			var _world = this.world,
+			    centerX = _world.centerX,
+			    centerY = _world.centerY;
+
+			sessionStorage.setItem('curState', 'EndGameStateWin');
+
+			this.stage.backgroundColor = '#fffcad';
+			var backgroundImage = this.add.sprite(0, 0, 'background');
+			backgroundImage.height = 1100;
+			backgroundImage.tint = 0xbbbbbb;
+			var playButton = this.add.button(centerX, centerY + 170, 'playButton', function () {
+				_this2.state.start('GamePlatformState', true, false, { score: 200 });
+			});
+			playButton.anchor.setTo(0.5, 0.5);
+			playButton.onInputDown.add(this.tint, playButton);
+			playButton.onInputUp.add(this.unTint, playButton);
+			var winText = this.add.text(centerX, centerY - 300, 'YOU WIN!', { font: "160px Fredoka One", fill: "#ffffff", align: "center" });
+			winText.anchor.setTo(0.5, 0.5);
+			var backToMenu = this.add.text(centerX, 1000, 'back to main menu', { font: "80px Fredoka One", fill: "#ffffff", align: "center" });
+			backToMenu.anchor.setTo(0.5);
+			backToMenu.inputEnabled = true;
+			backToMenu.events.onInputUp.add(function () {
+				_this2.state.start('MainMenuState');
+			}, this);
+		}
+	}, {
+		key: 'tint',
+		value: function tint() {
+			this.tint = 0xbbbbbb;
+			// sound.play('');
+		}
+	}, {
+		key: 'unTint',
+		value: function unTint() {
+			this.tint = 0xFFFFFF;
+			// sound.play('');
+		}
+	}]);
+
+	return EndGameStateWin;
+}(Phaser.State);
+
+exports.default = EndGameStateWin;
+
+},{}],5:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () {
+    function defineProperties(target, props) {
+        for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+        }
+    }return function (Constructor, protoProps, staticProps) {
+        if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+    };
+}();
+
+var _helpers = require('./helpers');
+
+function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
+
+function _possibleConstructorReturn(self, call) {
+    if (!self) {
+        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }return call && (typeof call === "object" || typeof call === "function") ? call : self;
+}
+
+function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+        throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var DONUT_SIZE = 100;
+var ALLOWED_DONUT_TYPES = ['donut-01', 'donut-02', 'donut-03', 'donut-04', 'donut-05', 'donut-06'];
+
+var LOSE_TIME = 300;
+var WIN_SCORE = 300;
+
+var backgroundMusic = void 0;
+var backgroundMusicState = 'on';
+var missSound = void 0;
+var killSound = void 0;
+var score = void 0;
+
+var emitter = void 0;
+var PARTICLES = ['particle-1', 'particle-2', 'particle-3'];
+
+var selDonutIndex = void 0;
+
+var GamePlatformState = function (_Phaser$State) {
+    _inherits(GamePlatformState, _Phaser$State);
+
+    function GamePlatformState() {
+        _classCallCheck(this, GamePlatformState);
+
+        return _possibleConstructorReturn(this, (GamePlatformState.__proto__ || Object.getPrototypeOf(GamePlatformState)).apply(this, arguments));
+    }
+
+    _createClass(GamePlatformState, [{
+        key: 'preload',
+        value: function preload() {
+            this.load.image('background', 'assets/images/backgrounds/background.jpg');
+            this.load.image('scoreTable', 'assets/images/bg-score.png');
+            this.load.image('donut-01', 'assets/images/game/gem-01.png');
+            this.load.image('donut-02', 'assets/images/game/gem-02.png');
+            this.load.image('donut-03', 'assets/images/game/gem-03.png');
+            this.load.image('donut-04', 'assets/images/game/gem-04.png');
+            this.load.image('donut-05', 'assets/images/game/gem-05.png');
+            this.load.image('donut-06', 'assets/images/game/gem-06.png');
+            this.load.image('donut-07', 'assets/images/game/gem-07.png');
+            this.load.image('donut-08', 'assets/images/game/gem-08.png');
+            this.load.image('donut-09', 'assets/images/game/gem-09.png');
+            this.load.image('donut-10', 'assets/images/game/gem-10.png');
+            this.load.image('donut-11', 'assets/images/game/gem-11.png');
+            this.load.image('donut-12', 'assets/images/game/gem-12.png');
+            this.load.image('hand', 'assets/images/game/hand.png');
+            this.load.image('mute', 'assets/images/btn-sfx.png');
+            this.load.audio('soundTrack', 'assets/audio/background.mp3');
+            this.load.audio('missSound', 'assets/audio/miss-sound.mp3');
+            this.load.audio('killSound', 'assets/audio/kill.mp3');
+            this.load.audio('select-1', 'assets/audio/select-1.mp3');
+            this.load.audio('select-2', 'assets/audio/select-2.mp3');
+            this.load.audio('select-3', 'assets/audio/select-3.mp3');
+            this.load.audio('select-4', 'assets/audio/select-4.mp3');
+            this.load.audio('select-5', 'assets/audio/select-5.mp3');
+            this.load.audio('select-6', 'assets/audio/select-6.mp3');
+            this.load.audio('select-7', 'assets/audio/select-7.mp3');
+            this.load.audio('select-8', 'assets/audio/select-8.mp3');
+            this.load.audio('select-9', 'assets/audio/select-9.mp3');
+            this.load.image('particle-1', 'assets/images/particles/particle_ex1.png');
+            this.load.image('particle-2', 'assets/images/particles/particle_ex2.png');
+            this.load.image('particle-3', 'assets/images/particles/particle_ex3.png');
+        }
+    }, {
+        key: 'create',
+        value: function create() {
+            var _this2 = this;
+
+            var _world = this.world,
+                centerX = _world.centerX,
+                centerY = _world.centerY;
+
+            sessionStorage.setItem('curState', 'GamePlatformState');
+
+            this.stage.backgroundColor = '#fffcad';
+            var backgroundImage = this.add.sprite(0, 0, 'background');
+            backgroundImage.height = 1100;
+
+            var scoreTable = this.add.sprite(centerX - 200, 10, 'scoreTable');
+            scoreTable.anchor.setTo(0.5, 0);
+            score = 0;
+            var scoreText = this.add.text(centerX - 190, 70, '0', { font: "64px Fredoka One", fill: "#ff3030", align: "center" });
+
+            var donuts = this.add.group();
+            (0, _helpers.generateField)(donuts, ALLOWED_DONUT_TYPES);
+            donuts.align(_helpers.FIELD_COLUMNS, -1, DONUT_SIZE, DONUT_SIZE);
+            donuts.x = centerX - DONUT_SIZE * _helpers.FIELD_COLUMNS / 2;
+            donuts.y = centerY + 100 - DONUT_SIZE * _helpers.FIELD_ROWS / 2;
+            donuts.setAll('inputEnabled', true);
+            donuts.setAll('input.useHandCursor', true);
+            donuts.callAll('events.onInputDown.add', 'events.onInputDown', function (item) {
+                _this2.clickHandler(item, scoreText);
+            }, this);
+
+            selDonutIndex = null;
+
+            missSound = this.add.audio('missSound');
+            backgroundMusic = this.add.audio('soundTrack');
+            backgroundMusic.loop = true;
+            backgroundMusic.play();
+
+            var mute = this.add.button(900, 50, 'mute', function () {
+                if (backgroundMusicState === 'on') {
+                    backgroundMusic.stop();
+                    backgroundMusicState = 'off';
+                } else {
+                    backgroundMusic.play();
+                    backgroundMusicState = 'on';
+                }
+            });
+            mute.onInputDown.add(this.tint, mute);
+            mute.onInputUp.add(this.unTint, mute);
+
+            this.time.events.add(Phaser.Timer.SECOND * LOSE_TIME, function () {
+                _this2.state.start('EndGameStateLose');
+                backgroundMusic.destroy();
+                _this2.cache.removeSound('soundTrack');
+            }, this);
+            var rawSecondsTimer = LOSE_TIME;
+            var timeText = this.add.text(centerX + 100, 100, (0, _helpers.formatTime)(rawSecondsTimer), { font: "64px Fredoka One", fill: "#ff3030", align: "center" });
+            this.game.time.events.loop(Phaser.Timer.SECOND, function () {
+                rawSecondsTimer--;
+                timeText.setText((0, _helpers.formatTime)(rawSecondsTimer));
+            }, this);
+        }
+    }, {
+        key: 'update',
+        value: function update() {}
+    }, {
+        key: 'render',
+        value: function render() {}
+    }, {
+        key: 'clickHandler',
+        value: function clickHandler(curDonut, scoreText) {
+            var curDonutIndex = curDonut.parent.getChildIndex(curDonut);
+            if (selDonutIndex === null) {
+                // виділяємо елемент, якщо ще не виділенний
+                curDonut.height = 120;
+                curDonut.width = 120;
+                curDonut.x -= 10;
+                curDonut.y -= 10;
+                selDonutIndex = curDonutIndex;
+            } else if (curDonutIndex === selDonutIndex) {
+                // знімаємо виділення, якщо клікаємо по вже виділеному елементу
+                curDonut.height = 100;
+                curDonut.width = 100;
+                curDonut.x += 10;
+                curDonut.y += 10;
+                selDonutIndex = null;
+            } else {
+                // у будь-якому випадку знімаємо виділення з поточного виділеного елементу
+                var selDonut = curDonut.parent.getChildAt(selDonutIndex);
+                selDonut.height = 100;
+                selDonut.width = 100;
+                selDonut.x += 10;
+                selDonut.y += 10;
+
+                // перевіряємо чи можна зробити перестановку та робимо її
+                var donutKeys = curDonut.parent.children.map(function (sprite) {
+                    return sprite.key;
+                });
+                var removableIndexes = (0, _helpers.getRemovableDonuts)(donutKeys, selDonutIndex, curDonutIndex);
+                if (!removableIndexes.length) {
+                    // перестановка неможлива або елементи не сусідні, відтворюємо відповідний звук
+                    missSound.play();
+                } else {
+                    // перестановка можлива, міняємо елементи місцями
+                    var t = selDonut.key;
+                    selDonut.loadTexture(curDonut.key);
+                    curDonut.loadTexture(t);
+                    // повторюємо поки є можливість видаляти елементи
+                    var iter = 1;
+                    while (removableIndexes.length) {
+                        // для анімації потрібні самі елементи за вказаними індексами
+                        var removableElements = removableIndexes.map(function (i) {
+                            return curDonut.parent.getChildAt(i);
+                        });
+                        this.animateRemoval(removableElements, iter);
+                        score += iter * removableIndexes.length;
+                        scoreText.setText('' + score);
+                        // замінити текстури в видалених елементів на нові рандомні
+                        removableElements.forEach(function (el) {
+                            return el.loadTexture(Phaser.ArrayUtils.getRandomItem(ALLOWED_DONUT_TYPES));
+                        });
+                        // перевірити чи можливе ще видалення після додання нових
+                        donutKeys = curDonut.parent.children.map(function (sprite) {
+                            return sprite.key;
+                        });
+                        removableIndexes = (0, _helpers.getRemovableDonuts)(donutKeys);
+                        // маємо лише 9 звуків для кожної ітерації
+                        if (iter <= 9) iter++;
+                    }
+                }
+                selDonutIndex = null;
+            }
+            if (score >= WIN_SCORE) {
+                this.state.start('EndGameStateWin');
+                backgroundMusic.destroy();
+                this.cache.removeSound('soundTrack');
+            }
+        }
+    }, {
+        key: 'animateRemoval',
+        value: function animateRemoval(elements, iter) {
+            // програвати на кожній ітерації вищий звук
+            killSound = this.add.audio('select-' + iter);
+            killSound.volume = 0.5;
+            killSound.play();
+
+            var middleElement = elements[Math.floor(elements.length / 2)];
+
+            emitter = this.add.emitter(50, 50, 100);
+            emitter.makeParticles(PARTICLES);
+            middleElement.addChild(emitter);
+            emitter.minParticleSpeed.setTo(-600, -600);
+            emitter.maxParticleSpeed.setTo(600, 600);
+            emitter.gravity = 0;
+            emitter.start(true, 1000, null, 10);
+        }
+    }, {
+        key: 'tint',
+        value: function tint() {
+            this.tint = 0xbbbbbb;
+            // sound.play('');
+        }
+    }, {
+        key: 'unTint',
+        value: function unTint() {
+            this.tint = 0xFFFFFF;
+            // sound.play('');
+        }
+    }]);
+
+    return GamePlatformState;
+}(Phaser.State);
+
+exports.default = GamePlatformState;
+
+},{"./helpers":8}],6:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () {
+	function defineProperties(target, props) {
+		for (var i = 0; i < props.length; i++) {
+			var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+		}
+	}return function (Constructor, protoProps, staticProps) {
+		if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+	};
+}();
+
+function _classCallCheck(instance, Constructor) {
+	if (!(instance instanceof Constructor)) {
+		throw new TypeError("Cannot call a class as a function");
+	}
+}
+
+function _possibleConstructorReturn(self, call) {
+	if (!self) {
+		throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+	}return call && (typeof call === "object" || typeof call === "function") ? call : self;
+}
+
+function _inherits(subClass, superClass) {
+	if (typeof superClass !== "function" && superClass !== null) {
+		throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+	}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var MainMenuState = function (_Phaser$State) {
+	_inherits(MainMenuState, _Phaser$State);
+
+	function MainMenuState() {
+		_classCallCheck(this, MainMenuState);
+
+		return _possibleConstructorReturn(this, (MainMenuState.__proto__ || Object.getPrototypeOf(MainMenuState)).apply(this, arguments));
+	}
+
+	_createClass(MainMenuState, [{
+		key: 'preload',
+		value: function preload() {
+			this.load.image('background', 'assets/images/backgrounds/background.jpg');
+			this.load.image('bigDonut', 'assets/images/donut.png');
+			this.load.image('bigShadow', 'assets/images/big-shadow.png');
+			this.load.image('logo', 'assets/images/donuts_logo.png');
+			this.load.image('playButton', 'assets/images/btn-play.png');
+			this.load.image('soundControlButton', 'assets/images/btn-sfx.png');
+		}
+	}, {
+		key: 'create',
+		value: function create() {
+			var _this2 = this;
+
+			var _world = this.world,
+			    centerX = _world.centerX,
+			    centerY = _world.centerY;
+
+			sessionStorage.setItem('curState', 'MainMenuState');
+
+			this.stage.backgroundColor = '#fffcad';
+			var backgroundImage = this.add.sprite(0, 0, 'background');
+			backgroundImage.height = 1100;
+
+			var bigDonutShadow = this.add.sprite(centerX, centerY, 'bigShadow');
+			bigDonutShadow.anchor.setTo(0.5, 0.5);
+			var bigDonut = this.add.sprite(centerX, centerY, 'bigDonut');
+			bigDonut.anchor.setTo(0.5, 0.5);
+			var logo = this.add.sprite(centerX, centerY - 150, 'logo');
+			logo.anchor.setTo(0.5, 0.5);
+
+			var playButton = this.add.button(centerX, centerY + 170, 'playButton', function () {
+				_this2.state.start('GamePlatformState', true, false, { score: 200 });
+			});
+			playButton.anchor.setTo(0.5, 0.5);
+			playButton.onInputDown.add(this.tint, playButton);
+			playButton.onInputUp.add(this.unTint, playButton);
+
+			var tutorButton = this.add.text(centerX, centerY + 300, 'tutorial', { font: "60px Fredoka One", fill: "#ffffff", align: "center" });
+			tutorButton.anchor.setTo(0.5);
+			tutorButton.inputEnabled = true;
+			tutorButton.events.onInputUp.add(function () {
+				_this2.state.start('TutorialState');
+			}, this);
+		}
+	}, {
+		key: 'tint',
+		value: function tint() {
+			this.tint = 0xbbbbbb;
+			// sound.play('');
+		}
+	}, {
+		key: 'unTint',
+		value: function unTint() {
+			this.tint = 0xFFFFFF;
+			// sound.play('');
+		}
+	}]);
+
+	return MainMenuState;
+}(Phaser.State);
+
+exports.default = MainMenuState;
+
+},{}],7:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () {
+	function defineProperties(target, props) {
+		for (var i = 0; i < props.length; i++) {
+			var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+		}
+	}return function (Constructor, protoProps, staticProps) {
+		if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+	};
+}();
+
+function _classCallCheck(instance, Constructor) {
+	if (!(instance instanceof Constructor)) {
+		throw new TypeError("Cannot call a class as a function");
+	}
+}
+
+function _possibleConstructorReturn(self, call) {
+	if (!self) {
+		throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+	}return call && (typeof call === "object" || typeof call === "function") ? call : self;
+}
+
+function _inherits(subClass, superClass) {
+	if (typeof superClass !== "function" && superClass !== null) {
+		throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+	}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var TutorialState = function (_Phaser$State) {
+	_inherits(TutorialState, _Phaser$State);
+
+	function TutorialState() {
+		_classCallCheck(this, TutorialState);
+
+		return _possibleConstructorReturn(this, (TutorialState.__proto__ || Object.getPrototypeOf(TutorialState)).apply(this, arguments));
+	}
+
+	_createClass(TutorialState, [{
+		key: 'preload',
+		value: function preload() {
+			this.load.image('background', 'assets/images/backgrounds/background.jpg');
+			this.load.image('playButton', 'assets/images/btn-play.png');
+		}
+	}, {
+		key: 'create',
+		value: function create() {
+			var _this2 = this;
+
+			var _world = this.world,
+			    centerX = _world.centerX,
+			    centerY = _world.centerY;
+
+			sessionStorage.setItem('curState', 'TutorialState');
+
+			this.stage.backgroundColor = '#fffcad';
+			var backgroundImage = this.add.sprite(0, 0, 'background');
+			backgroundImage.height = 1100;
+
+			var tutorHeader = this.add.text(centerX, 100, 'TUTORIAL', { font: "100px Fredoka One", fill: "#000000", align: "center" });
+			tutorHeader.anchor.setTo(0.5, 0.5);
+			var tutorPart1 = this.add.text(centerX, 200, 'In the main menu press "play"', { font: "60px Fredoka One", fill: "#000000", align: "center" });
+			tutorPart1.anchor.setTo(0.5, 0.5);
+			var tutorPart2 = this.add.text(centerX, 300, 'Now, when you are on the playground, do following:', { font: "40px Fredoka One", fill: "#000000", align: "center" });
+			tutorPart2.anchor.setTo(0.5, 0.5);
+			var tutorPart3 = this.add.text(centerX, 400, 'You need to mach 3 or more donuts in line', { font: "50px Fredoka One", fill: "#000000", align: "center" });
+			tutorPart3.anchor.setTo(0.5, 0.5);
+			var tutorPart4 = this.add.text(centerX, 500, 'Choose one donut by clicking on him', { font: "60px Fredoka One", fill: "#000000", align: "center" });
+			tutorPart4.anchor.setTo(0.5, 0.5);
+			var tutorPart5 = this.add.text(centerX, 600, 'Click on a close donut to try a mach', { font: "60px Fredoka One", fill: "#000000", align: "center" });
+			tutorPart5.anchor.setTo(0.5, 0.5);
+			var tutorPart6 = this.add.text(centerX, 700, 'For every mach you get points, more in one go - better', { font: "40px Fredoka One", fill: "#000000", align: "center" });
+			tutorPart6.anchor.setTo(0.5, 0.5);
+			var tutorPart7 = this.add.text(centerX, 800, 'Get to 300 and YOU will WIN!', { font: "60px Fredoka One", fill: "#000000", align: "center" });
+			tutorPart7.anchor.setTo(0.5, 0.5);
+			var backToMenu = this.add.text(centerX, 1000, 'back to main menu', { font: "80px Fredoka One", fill: "#000000", align: "center" });
+			backToMenu.anchor.setTo(0.5);
+			backToMenu.inputEnabled = true;
+			backToMenu.events.onInputUp.add(function () {
+				_this2.state.start('MainMenuState');
+			}, this);
+		}
+	}, {
+		key: 'tint',
+		value: function tint() {
+			this.tint = 0xbbbbbb;
+			// sound.play('');
+		}
+	}, {
+		key: 'unTint',
+		value: function unTint() {
+			this.tint = 0xFFFFFF;
+			// sound.play('');
+		}
+	}]);
+
+	return TutorialState;
+}(Phaser.State);
+
+exports.default = TutorialState;
+
+},{}],8:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.generateField = generateField;
+exports.getRemovableDonuts = getRemovableDonuts;
+exports.formatTime = formatTime;
+
+function _toConsumableArray(arr) {
+    if (Array.isArray(arr)) {
+        for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) {
+            arr2[i] = arr[i];
+        }return arr2;
+    } else {
+        return Array.from(arr);
+    }
+}
+
+var FIELD_COLUMNS = exports.FIELD_COLUMNS = 10;
+var FIELD_ROWS = exports.FIELD_ROWS = 8;
+
+function removeDuplicates(donuts, donutTypes, row, column) {
+    var filtered = [].concat(_toConsumableArray(donutTypes));
+    // Don't repeat donuts indexes horizontally more than two times
+    if (column > 1) {
+        var prevKey = donuts[donuts.length - 1].key;
+        var prevPrevKey = donuts[donuts.length - 2].key;
+        if (prevKey === prevPrevKey) filtered = filtered.filter(function (index) {
+            return index !== prevKey;
+        });
+    }
+    // Don't repeat donuts indexes vertically more than two times
+    if (row > 1) {
+        var upperKey = donuts[(row - 1) * FIELD_COLUMNS + column].key;
+        var upperUpperKey = donuts[(row - 2) * FIELD_COLUMNS + column].key;
+        if (upperKey === upperUpperKey) filtered = filtered.filter(function (index) {
+            return index !== upperKey;
+        });
+    }
+    return filtered;
+}
+// заповнюємо ігрове поле, слідкуючі, що ніякі 3 або більше однакових елемента не генерувалися підряд
+// donutTypes містить масив тих елементів, які можна розмістити на полі
+function generateField(donutsGroup, donutTypes) {
+    for (var i = 0; i < FIELD_ROWS; i++) {
+        for (var j = 0; j < FIELD_COLUMNS; j++) {
+            var randomKey = Phaser.ArrayUtils.getRandomItem(removeDuplicates(donutsGroup.children, donutTypes, i, j));
+            donutsGroup.create(0, 0, randomKey);
+        }
+    }
+}
+
+// знайти індекси всіх елементів які можна видалити
+// на поточному полі або на полі яке виникає якщо переставити місцями елементи swapA i swapB
+function getRemovableDonuts(donuts, swapA, swapB) {
+    // створюємо копію ігрового поля щоб провести перевірку перед перстановкою swapA i swapB
+    var donutsCopy = [].concat(_toConsumableArray(donuts));
+    if (swapA && swapB) {
+        // перевірка чи є елементи сусідніми для перестановки, якщо ні,
+        // то перестановка неможлива і повертається порожній массив
+        var diff = Math.abs(swapA - swapB);
+        if (diff !== 1 && diff !== FIELD_COLUMNS) {
+            return [];
+        }
+        var t = donutsCopy[swapA];
+        donutsCopy[swapA] = donutsCopy[swapB];
+        donutsCopy[swapB] = t;
+    }
+    // допоможній массив з нулів і одиниць, одиниці ставимо для елементів, які можна видалити
+    var removeList = new Array(donuts.length).fill(0);
+    for (var i = 0; i < FIELD_ROWS; i++) {
+        for (var j = 0; j < FIELD_COLUMNS; j++) {
+            var curIndex = i * FIELD_COLUMNS + j;
+            // перевірка трьох сусідніх елементів по горизонталі
+            if (j > 1 && donutsCopy[curIndex] === donutsCopy[curIndex - 1] && donutsCopy[curIndex] === donutsCopy[curIndex - 2]) {
+                removeList[curIndex] = 1;
+                removeList[curIndex - 1] = 1;
+                removeList[curIndex - 2] = 1;
+            }
+            // перевірка трьох сусідніх елементів по вертикалі
+            if (i > 1 && donutsCopy[curIndex] === donutsCopy[curIndex - FIELD_COLUMNS] && donutsCopy[curIndex] === donutsCopy[curIndex - FIELD_COLUMNS * 2]) {
+                removeList[curIndex] = 1;
+                removeList[curIndex - FIELD_COLUMNS] = 1;
+                removeList[curIndex - FIELD_COLUMNS * 2] = 1;
+            }
+        }
+    }
+    // перетворюємо масив з одиниць і нулів в массив індексів потрібних нам елементів
+    var retValue = [];
+    removeList.forEach(function (v, i) {
+        if (v) {
+            retValue.push(i);
+        }
+    });
+    return retValue;
+}
+
+function formatTime(sec) {
+    var s = String(sec % 60).padStart(2, '0');
+    var m = String(Math.floor(sec / 60)).padStart(2, '0');
+    return m + ':' + s;
+}
+
+},{}]},{},[2])
+//# sourceMappingURL=game.js.map
