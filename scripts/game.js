@@ -45,74 +45,77 @@ var _TutorialState = require('states/TutorialState.js');
 var _TutorialState2 = _interopRequireDefault(_TutorialState);
 
 function _interopRequireDefault(obj) {
-	return obj && obj.__esModule ? obj : { default: obj };
+    return obj && obj.__esModule ? obj : { default: obj };
 }
 
 function _interopRequireWildcard(obj) {
-	if (obj && obj.__esModule) {
-		return obj;
-	} else {
-		var newObj = {};if (obj != null) {
-			for (var key in obj) {
-				if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];
-			}
-		}newObj.default = obj;return newObj;
-	}
+    if (obj && obj.__esModule) {
+        return obj;
+    } else {
+        var newObj = {};if (obj != null) {
+            for (var key in obj) {
+                if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];
+            }
+        }newObj.default = obj;return newObj;
+    }
 }
 
 function _classCallCheck(instance, Constructor) {
-	if (!(instance instanceof Constructor)) {
-		throw new TypeError("Cannot call a class as a function");
-	}
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
 }
 
 function _possibleConstructorReturn(self, call) {
-	if (!self) {
-		throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-	}return call && (typeof call === "object" || typeof call === "function") ? call : self;
+    if (!self) {
+        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }return call && (typeof call === "object" || typeof call === "function") ? call : self;
 }
 
 function _inherits(subClass, superClass) {
-	if (typeof superClass !== "function" && superClass !== null) {
-		throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-	}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+    if (typeof superClass !== "function" && superClass !== null) {
+        throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
 }
 
 var Game = function (_Phaser$Game) {
-	_inherits(Game, _Phaser$Game);
+    _inherits(Game, _Phaser$Game);
 
-	function Game() {
-		_classCallCheck(this, Game);
+    function Game() {
+        _classCallCheck(this, Game);
 
-		var _this = _possibleConstructorReturn(this, (Game.__proto__ || Object.getPrototypeOf(Game)).call(this, 1090, 1100, Phaser.AUTO, 'content', null));
+        var _this = _possibleConstructorReturn(this, (Game.__proto__ || Object.getPrototypeOf(Game)).call(this, 1090, 1100, Phaser.AUTO, 'content', null));
 
-		WebFont.load({
-			google: {
-				families: ['Fredoka One']
-			}
-		});
-		_this.state.add('MainMenuState', _MainMenuState2.default, false);
-		_this.state.add('GamePlatformState', _GamePlatformState2.default, false);
-		_this.state.add('EndGameStateWin', _EndGameStateWin2.default, false);
-		_this.state.add('EndGameStateLose', _EndGameStateLose2.default, false);
-		_this.state.add('TutorialState', _TutorialState2.default, false);
-		if (sessionStorage.getItem('curState') === 'MainMenuState') {
-			_this.state.start('MainMenuState');
-		} else if (sessionStorage.getItem('curState') === 'GamePlatformState') {
-			_this.state.start('GamePlatformState');
-		} else if (sessionStorage.getItem('curState') === 'EndGameStateWin') {
-			_this.state.start('EndGameStateWin');
-		} else if (sessionStorage.getItem('curState') === 'EndGameStateLose') {
-			_this.state.start('EndGameStateLose');
-		} else if (sessionStorage.getItem('curState') === 'TutorialState') {
-			_this.state.start('TutorialState');
-		} else {
-			_this.state.start('MainMenuState');
-		}
-		return _this;
-	}
+        WebFont.load({
+            google: {
+                families: ['Fredoka One']
+            }
+        });
+        _this.state.add('MainMenuState', _MainMenuState2.default, false);
+        _this.state.add('GamePlatformState', _GamePlatformState2.default, false);
+        _this.state.add('EndGameStateWin', _EndGameStateWin2.default, false);
+        _this.state.add('EndGameStateLose', _EndGameStateLose2.default, false);
+        _this.state.add('TutorialState', _TutorialState2.default, false);
+        switch (sessionStorage.getItem('curState')) {
+            case 'GamePlatformState':
+                _this.state.start('GamePlatformState');
+                break;
+            case 'EndGameStateWin':
+                _this.state.start('EndGameStateWin');
+                break;
+            case 'EndGameStateLose':
+                _this.state.start('EndGameStateLose');
+                break;
+            case 'TutorialState':
+                _this.state.start('TutorialState');
+                break;
+            default:
+                _this.state.start('MainMenuState');
+        }
+        return _this;
+    }
 
-	return Game;
+    return Game;
 }(Phaser.Game);
 
 new Game();
